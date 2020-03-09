@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="gg" id="V1.0__Customer-schema">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="customer"/>
+      </not>
+    </preConditions>
+    <createTable tableName="customer">
+      <column name="id" type="BIGINT" remarks="ID">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="name" type="VARCHAR(511)" remarks="Company name">
+        <constraints nullable="false" primaryKey="false"/>
+      </column>
+      <column name="inn" type="VARCHAR(12)" remarks="INN">
+        <constraints nullable="false" primaryKey="false" unique="true"/>
+      </column>
+      <column name="kpp" type="VARCHAR(9)" remarks="KPP">
+        <constraints nullable="false" primaryKey="false"/>
+      </column>
+      <column name="ceo_first_name" type="VARCHAR(255)" remarks="CEO first name">
+        <constraints nullable="false" primaryKey="false"/>
+      </column>
+      <column name="ceo_middle_name" type="VARCHAR(255)" remarks="CEO middle name">
+        <constraints nullable="false" primaryKey="false"/>
+      </column>
+      <column name="ceo_last_name" type="VARCHAR(255)" remarks="CEO last name">
+        <constraints nullable="false" primaryKey="false"/>
+      </column>
+      <column name="phone" type="CHAR(10)" remarks="Phone number (without +7)">
+        <constraints nullable="false" primaryKey="false" unique="true"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="customer"/>
+    </rollback>
+  </changeSet>
+</databaseChangeLog>
