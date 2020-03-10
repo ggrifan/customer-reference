@@ -1,12 +1,14 @@
 import React from 'react';
 import './ErrorBoundary.css';
 
-const withErrorBoundary = (wrapped) => {
-  return (
+const withErrorBoundary = (Wrapped) => {
+  return (props) => {
+    return (
       <ErrorBoundary>
-        {wrapped}
+        <Wrapped {...props}/>
       </ErrorBoundary>
-  );
+    );
+  }
 };
 
 export default withErrorBoundary;
@@ -24,9 +26,9 @@ export class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-          <div className="ErrorBoundary bg-dark text-danger">
-            <h2>Что-то пошло не так!</h2>
-          </div>
+        <div className="ErrorBoundary bg-dark text-danger">
+          <h2>Что-то пошло не так!</h2>
+        </div>
       );
     }
 
