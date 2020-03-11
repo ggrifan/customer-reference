@@ -1,11 +1,13 @@
+import axios from 'axios';
+
 export default class CustomerService {
   _url = `${process.env.REACT_APP_API_BASE_URL}/customer`;
 
   getAll = () => {
-    return fetch(`${this._url}`, {method: 'GET'})
+    return axios.get(`${this._url}`).then(res => res.data);
   };
 
   getById = (id) => {
-    return fetch(`${this._url}/${id}`, {method: 'GET'});
+    return axios.get(`${this._url}/${id}`).then(res => res.data);
   };
 }

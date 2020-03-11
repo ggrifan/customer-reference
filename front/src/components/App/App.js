@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { DummyCustomerService, withCustomerServiceProvider } from "../ServiceContext";
+import { CustomerService, DummyCustomerService, withCustomerServiceProvider } from "../ServiceContext";
 import CustomerList from "../CustomerList";
 import withErrorBoundary from "../ErrorBoundary";
 import Header from "../Header";
@@ -42,4 +42,6 @@ function App() {
   );
 }
 
-export default withErrorBoundary(withCustomerServiceProvider(App, new DummyCustomerService()));
+const customerService = process.env.REACT_APP_USE_BACK ? new CustomerService(): new DummyCustomerService();
+
+export default withErrorBoundary(withCustomerServiceProvider(App, customerService));

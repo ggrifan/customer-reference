@@ -12,7 +12,9 @@ class CustomerList extends React.Component {
   componentDidMount() {
     const {customerService} = this.props;
     customerService.getAll()
-      .then(customers => this.setState({customers}))
+      .then(customers => {
+        this.setState({customers});
+      })
       .catch(reason => console.log(`Fail on get customers: ${reason}`));
   }
 
