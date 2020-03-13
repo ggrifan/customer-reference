@@ -15,7 +15,11 @@ Under the hood backend uses liquibase to initialize database (create table and f
 
 Run back (run command at project root directory)
 ```
+# for Windows
 gradlew :back:bootRun
+
+# for Linux
+gradlew.bat :back:bootRun
 ```
 
 ##### Default server port:
