@@ -1,11 +1,11 @@
-## Customer Reference
+# Customer Reference
 
-#### Project has 2 subprojects:
+### Project has 2 subprojects:
 
 - `back` - backend server based on Spring Boot Framework
 - `front` - frontend SPA based on React
 
-#### Back
+### Back
 Run back (run command at project root directory)
 ```
 gradlew :back:bootRun
@@ -32,7 +32,7 @@ spring.datasource.password=postgres
 
 See `application.properties` for other settings.
 
-#### Front
+### Front
 Before run application install npm packages
 ```
 cd front
