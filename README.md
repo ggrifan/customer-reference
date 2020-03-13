@@ -6,17 +6,17 @@
 - `front` - frontend SPA based on React
 
 ### Back
-Run back (run command at project root directory)
-```
-gradlew :back:bootRun
-```
-
 `back` is using PostgreSQL batabase.
 Before run application use should create a database.
 
 >Application will use `customer-reference` database name by default.
 
 Under the hood backend uses liquibase to initialize database (create table and fill it with test data).
+
+Run back (run command at project root directory)
+```
+gradlew :back:bootRun
+```
 
 ##### Default server port:
 ```
