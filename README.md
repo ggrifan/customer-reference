@@ -11,15 +11,15 @@ Before run application use should create a database.
 
 >Application will use `customer-reference` database name by default.
 
-Under the hood backend uses liquibase to initialize database (create table and fill it with test data).
+Under the hood `back` uses `liquibase` to initialize database (create table and fill it with test data).
 
-Run back (run command at project root directory)
+Run `back` (run command at project root directory)
 ```
 # for Windows
-gradlew :back:bootRun
+gradlew.bat :back:bootRun
 
 # for Linux
-gradlew.bat :back:bootRun
+gradlew :back:bootRun
 ```
 
 ##### Default server port:
