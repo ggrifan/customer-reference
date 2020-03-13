@@ -16,7 +16,7 @@ Before run application use should create a database.
 
 >Application will use `customer-reference` database name by default.
 
-Under the hood backend uses liquibase to initialize database (create table and fill test data).
+Under the hood backend uses liquibase to initialize database (create table and fill it with test data).
 
 ##### Default server port:
 ```
