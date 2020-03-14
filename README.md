@@ -48,7 +48,7 @@ Run application in development mode
 npm start
 ```
 
-You can change API base url of backend in `.env.development.local` file
+You can change API base url of backend in `.env` file
 ```
 REACT_APP_API_BASE_URL=http://localhost:8080/api
 ```
